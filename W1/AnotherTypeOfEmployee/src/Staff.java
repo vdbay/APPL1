@@ -27,7 +27,7 @@ public class Staff
         staffList[6] = new Commission ("Alex", "Medan",
                 "123-4444", "3-3", 6.25, 0.2);
         staffList[7] = new Commission ("Akbar", "Bandung",
-                "123-4567","6-3", 6.25, 0.2);
+                "123-4567","6-3", 9.75, 0.15);
         ((Executive)staffList[0]).awardBonus (500.00);
         ((Hourly)staffList[3]).addHours (40);
         ((Commission)staffList[6]).addHours(35);
