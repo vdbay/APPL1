@@ -12,4 +12,14 @@ public class Commission extends Hourly{
     public void addSales (double totalSales){
         total=total+totalSales;
     }
+    public double pay(){
+        double payment = super.pay() + (commrate*total);
+        total = 0;
+        return payment;
+    }
+    public String toString(){
+        String  result = super.toString();
+        result += "\nTotalSales: " + total;
+        return result;
+    }
 }
