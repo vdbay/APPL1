@@ -32,15 +32,21 @@ public class CirclePanel extends JPanel
         JButton yellow = new JButton("Yellow");
         JButton green = new JButton("Green");
         JButton blue = new JButton("Blue");
+        JButton none = new JButton("Pick A Color");
 // Add listeners to the buttons
         left.addActionListener(new MoveListener(-20,0));
         right.addActionListener(new MoveListener(20,0));
         up.addActionListener(new MoveListener(0,-20));
         down.addActionListener(new MoveListener(0,20));
         red.addActionListener(new changeColor(Color.RED));
+        red.setBackground(Color.RED);
         green.addActionListener(new changeColor(Color.GREEN));
+        green.setBackground(Color.GREEN);
         blue.addActionListener(new changeColor(Color.BLUE));
+        blue.setBackground(Color.BLUE);
         yellow.addActionListener(new changeColor(Color.YELLOW));
+        none.addActionListener(new changeColor(null));
+        yellow.setBackground(Color.YELLOW);
 // Need a panel to put the buttons on or they'll be on
 // top of each other.
         JPanel buttonPanel = new JPanel();
@@ -53,6 +59,7 @@ public class CirclePanel extends JPanel
         JPanel colorPanel = new JPanel();
         colorPanel.add(red);
         colorPanel.add(green);
+        colorPanel.add(none);
         colorPanel.add(yellow);
         colorPanel.add(blue);
         this.add(colorPanel, "North");
@@ -69,11 +76,16 @@ public class CirclePanel extends JPanel
     //---------------------------------------------------------------
     private class changeColor implements ActionListener{
         private Color warna;
+
         public changeColor(Color warna){
             this.warna=warna;
         }
         public void actionPerformed(ActionEvent e){
-            c=warna;
+            if(this.warna==null){
+                c=JColorChooser.showDialog(null,"Pick Color", Color.white);
+            }else {
+                c=this.warna;
+            }
             repaint();
         }
     }
