@@ -10,7 +10,7 @@ public class Commission extends Hourly{
     }
 
     public void addSales (double totalSales){
-        total=total+totalSales;
+        total=totalSales;
     }
     public double pay(){
         double payment = super.pay() + (commrate*total);
