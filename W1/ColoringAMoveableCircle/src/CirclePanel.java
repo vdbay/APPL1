@@ -38,6 +38,9 @@ public class CirclePanel extends JPanel
         up.addActionListener(new MoveListener(0,-20));
         down.addActionListener(new MoveListener(0,20));
         red.addActionListener(new changeColor(Color.RED));
+        green.addActionListener(new changeColor(Color.GREEN));
+        blue.addActionListener(new changeColor(Color.BLUE));
+        yellow.addActionListener(new changeColor(Color.YELLOW));
 // Need a panel to put the buttons on or they'll be on
 // top of each other.
         JPanel buttonPanel = new JPanel();
@@ -45,9 +48,14 @@ public class CirclePanel extends JPanel
         buttonPanel.add(right);
         buttonPanel.add(up);
         buttonPanel.add(down);
-        buttonPanel.add(red);
 // Add the button panel to the bottom of the main panel
         this.add(buttonPanel, "South");
+        JPanel colorPanel = new JPanel();
+        colorPanel.add(red);
+        colorPanel.add(green);
+        colorPanel.add(yellow);
+        colorPanel.add(blue);
+        this.add(colorPanel, "North");
     }
     //---------------------------------------------------------------
 // Draw circle on CirclePanel
