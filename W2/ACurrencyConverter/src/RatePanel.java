@@ -23,7 +23,7 @@ public class RatePanel extends JPanel
     public RatePanel ()
     {
         this.setBackground(new Color(41,121,255));
-        this.setLayout(new GridLayout(4,2,2,2));
+        this.setLayout(new GridLayout(4,2,5,5));
         this.setBorder(new EmptyBorder(10,10,10,10));
         JLabel title = new JLabel ("How much is that in dollars?");
         title.setAlignmentX (Component.CENTER_ALIGNMENT);
@@ -40,15 +40,19 @@ public class RatePanel extends JPanel
         currency=new JComboBox<>(currencyName);
         input=new JTextField(8);
         currency.addActionListener(new ComboListener());
+        title.setForeground(Color.WHITE);
         add(title);
         add(empty);
         texts=new JLabel("Input Money :");
+        texts.setForeground(Color.WHITE);
         add(texts);
         add(input);
         texts=new JLabel("Select Currencies :");
+        texts.setForeground(Color.WHITE);
         add(texts);
         add(currency);
         texts=new JLabel("Result:");
+        texts.setForeground(Color.WHITE);
         add(texts);
         result=new JTextArea("");
         result.setEditable(false);
