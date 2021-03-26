@@ -6,12 +6,10 @@ public class PrimePanel extends JPanel
     private JTextField number;
     private JButton computeButton;
     private JTextArea primeList;
-    // ----------------------------------------------------------
 // Sets up a panel with a heading, a labeled text field
 // for the user to enter an integer, a button to trigger
 // the calculation, and a text area to display the list
 // of primes.
-// ----------------------------------------------------------
     public PrimePanel ()
     {
         JLabel heading = new JLabel ("Prime Number Listing");
@@ -23,7 +21,6 @@ public class PrimePanel extends JPanel
         JScrollPane primescroll = new JScrollPane(primeList);
         primescroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         computeButton.addActionListener(new ButtonListener());
-// Add the components to the panel
         add (heading);
         add (inputLabel);
         add (number);
@@ -32,15 +29,11 @@ public class PrimePanel extends JPanel
         setPreferredSize (new Dimension (400, 320));
         setBackground (Color.yellow);
     }
-    // *****************************************************************
 // Represents a listener for the click of the button.
-// *****************************************************************
     public class ButtonListener implements ActionListener
     {
-        // -----------------------------------------------------------
 // Generates and displays a list of primes when the
 // button is clicked.
-// -----------------------------------------------------------
         public void actionPerformed (ActionEvent event)
         {
             String textNum = number.getText();
